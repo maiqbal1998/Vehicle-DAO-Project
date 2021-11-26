@@ -1,0 +1,36 @@
+while (resultset.next()) {
+				System.out.println(resultset.getInt("vehicle_id") + " " + resultset.getString("make") + " "
+						+ resultset.getString("model") + " " + resultset.getInt("year") + " "
+						+ resultset.getInt("price") + " " + resultset.getString("license_number") + " "
+						+ resultset.getString("colour") + " " + resultset.getInt("number_doors") + " "
+						+ resultset.getString("transmission") + " " + resultset.getString("mileage") + " "
+						+ resultset.getString("fuel_type") + " " + resultset.getString("engine_size") + " "
+						+ resultset.getString("body_style") + " " + resultset.getString("condition") + " "
+						+ resultset.getString("Notes"));
+				vehicles.add(resultset);
+			}
+---
+while (resultset.next()) {
+				int vehicle_id = resultset.getInt("vehicle_id");
+				String make = resultset.getString("make");
+				String model = resultset.getString("model");
+				int year = resultset.getInt("year");
+				int price = resultset.getInt("price");
+				String license_number = resultset.getString("license_number");
+				String colour = resultset.getString("colour");
+				int number_doors = resultset.getInt("number_doors");
+				String transmission = resultset.getString("transmission");
+				int mileage = resultset.getInt("mileage");
+				String fuel_type = resultset.getString("fuel_type");
+				int engine_size = resultset.getInt("engine_size");
+				String body_style = resultset.getString("body_style");
+				String condition = resultset.getString("condition");
+				String notes = resultset.getString("Notes");
+				vehicles.add(new Vehicle(vehicle_id, make, model, year, price, license_number, colour, number_doors, transmission, mileage, fuel_type, engine_size, body_style, condition, notes));
+			}
+
+			
+-Inserting strings only inserts first part of the strings.
+-Tidy up code
+-Do Update method
+-Do web service
